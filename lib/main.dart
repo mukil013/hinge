@@ -5,6 +5,8 @@ import 'package:hinge1/pages/home.dart';
 import 'package:hinge1/pages/market.dart';
 import 'package:hinge1/pages/message.dart';
 
+import 'draweroptions/profile.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,16 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: _router,
+      home: home(),
     );
   }
-  final GoRouter _router = GoRouter(
-      routes: [
-        GoRoute(path: '/', builder: ((context,state) => const home())),
-        GoRoute(path: '/message.dart', builder: ((context,state) => const message())),
-        GoRoute(path: '/market.dart', builder: ((context,state) => const market())),
 
-      ]);
 }

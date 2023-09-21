@@ -1,10 +1,17 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:hinge1/components/cards.dart';
 import 'package:hinge1/components/input.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hinge1/draweroptions/profile.dart';
+import 'package:hinge1/pages/market.dart';
 
 class home extends StatelessWidget {
   const home({super.key});
+
+  void Navi (){
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +39,15 @@ class home extends StatelessWidget {
       drawer: Drawer(
           child: SafeArea(
             child: ListView(
-              children: const [
+              children:  [
                 SizedBox(height: 125),
                 ListTile(
                   leading: Icon(Icons.person),
                   title: Text('Profile'),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfileUI()));
+
+                  },
                 ),
                 ListTile(
                   leading: Icon(Icons.favorite),
@@ -73,7 +84,7 @@ class home extends StatelessWidget {
                 ),
               ],
             ),
-          )
+      ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
