@@ -13,12 +13,12 @@ class _EditProfileUIState extends State<EditProfileUI> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
-        leading: const IconButton(
+        leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
             color: Colors.white,
           ),
-          onPressed: null,
+          onPressed: () => Navigator.pop(context),
         ),
         actions: const [
           IconButton(

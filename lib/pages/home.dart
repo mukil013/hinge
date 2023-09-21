@@ -4,20 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:hinge1/components/cards.dart';
 import 'package:hinge1/components/input.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hinge1/draweroptions/feedback.dart';
 import 'package:hinge1/draweroptions/profile.dart';
 import 'package:hinge1/pages/market.dart';
+import '';
+import '../draweroptions/fav.dart';
+import '../draweroptions/order.dart';
+import '../draweroptions/review.dart';
 
 class home extends StatelessWidget {
   const home({super.key});
-
-  void Navi (){
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.blue,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -28,7 +30,7 @@ class home extends StatelessWidget {
                   fontSize: 18
               ),)),
             TextButton(onPressed: () {
-              GoRouter.of(context).go('/market');
+              Navigator.push(context, MaterialPageRoute(builder: (context) => market()));
             }, child: const Text('Manufacturers',style: TextStyle(
                 color: Colors.white,
                 fontSize: 18
@@ -40,26 +42,28 @@ class home extends StatelessWidget {
           child: SafeArea(
             child: ListView(
               children:  [
-                SizedBox(height: 125),
+                const SizedBox(height: 125),
                 ListTile(
-                  leading: Icon(Icons.person),
-                  title: Text('Profile'),
+                  leading:const Icon(Icons.person),
+                  title:const Text('Profile'),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfileUI()));
-
                   },
                 ),
                 ListTile(
-                  leading: Icon(Icons.favorite),
-                  title: Text('Favorite'),
+                  leading:const Icon(Icons.favorite),
+                  title:const Text('Favorite'),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => fav())),
                 ),
                 ListTile(
                   leading: Icon(Icons.bookmark_border),
                   title: Text('Order'),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => order())),
                 ),
                 ListTile(
                   leading: Icon(Icons.reviews),
                   title: Text('Review'),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => review())),
                 ),
                 ListTile(
                   leading: Icon(Icons.history),
@@ -77,6 +81,7 @@ class home extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.feedback),
                   title: Text('Feedback'),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => feedback())),
                 ),
                 ListTile(
                   leading: Icon(Icons.exit_to_app),

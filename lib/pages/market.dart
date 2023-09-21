@@ -9,27 +9,29 @@ class market extends StatefulWidget {
 class _marketState extends State<market> {
 
   void appbarcolor(){
-    Color appBarcolor = Colors.blue;
+    Color appBarColor = Colors.blue;
     setState(() {
-      appBarcolor = Colors.red;
+      appBarColor = Colors.red;
     });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: GestureDetector(
-        onTap: () {
-      // Call the function to change the app bar color
-        appbarcolor();
-        },
-        child: const Text('Manufacturer',
-        style: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
+          title: GestureDetector(
+            onTap: () {
+              appbarcolor();
+            },
+            child: const Text(
+              'Manufacturer',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              )
+            )
           ),
-    ),
-    ), // Set the app bar color
-    )
-  }
+          backgroundColor: Colors.red,
+        )
+        );
+    }
 }
