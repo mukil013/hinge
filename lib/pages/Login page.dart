@@ -1,32 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: LoginPage(),
-    );
-  }
-}
-
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title:const Text(
           'Login Page',
-          style: TextStyle(color: Colors.black), // Set text color to black
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue, // Set app bar color to blue
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Padding(
@@ -36,25 +19,25 @@ class LoginPage extends StatelessWidget {
             children: <Widget>[
               // Username field
               TextFormField(
-                decoration: InputDecoration(
+                decoration:const InputDecoration(
                   labelText: 'Username',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Password field
               TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration:const InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Login button
               ElevatedButton(
                 onPressed: () {
-                  // Implement your login logic here
+
                 },
                 child: Text('Login'),
               ),
