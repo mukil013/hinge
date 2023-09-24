@@ -9,7 +9,7 @@ class card extends StatelessWidget {
       height: 190,
       width: 140,
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(15)
       ),
     );
