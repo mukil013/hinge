@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "904310207249",
+    "project_id": "hinge-013",
+    "storage_bucket": "hinge-013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904310207249:android:3c69b726ff10814bf452b0",
+        "android_client_info": {
+          "package_name": "com.teamalpha.hinge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsl_qFyiYGjuGxzY6sUHobC_r3kmBghQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
