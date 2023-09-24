@@ -20,7 +20,8 @@ class search extends StatelessWidget {
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
               child: TextField(
-              )),
+              )
+          ),
       )
       )
     );
