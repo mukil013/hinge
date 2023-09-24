@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hinge1/draweroptions/feedback.dart';
 import 'package:hinge1/draweroptions/profile.dart';
+import 'package:hinge1/draweroptions/setting.dart';
 import 'package:hinge1/pages/Login%20page.dart';
 import 'package:hinge1/pages/product.dart';
 import 'package:hinge1/pages/search.dart';
@@ -87,6 +88,8 @@ class home extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.settings),
                       title: Text('Settings'),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Settingg())),
+
                     ),
                     ListTile(
                       leading: Icon(Icons.help),
