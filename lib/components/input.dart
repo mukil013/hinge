@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
 
 class input extends StatelessWidget {
-  const input({super.key});
+
+  final controller;
+  final String hintText;
+  final bool obsecureText;
+
+  const input({super.key,
+    required this.controller,
+    required this.hintText,
+    required this.obsecureText
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 0),
       child: TextField(
+        controller: controller,
+        obscureText: obsecureText,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(width: 2,
             color: Colors.black12),
           ),
-          hintText: 'Search',
           filled: true,
-          fillColor: Colors.black12
+          hintText: hintText,
+          fillColor: Colors.white
         ),
       )
     );

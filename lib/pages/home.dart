@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hinge1/draweroptions/feedback.dart';
 import 'package:hinge1/draweroptions/profile.dart';
@@ -11,7 +12,10 @@ import '../draweroptions/order.dart';
 import '../draweroptions/review.dart';
 
 class home extends StatelessWidget {
-  const home({super.key});
+  home({super.key});
+  
+  final user = FirebaseAuth.instance.currentUser!;
+  
   @override
   Widget build(BuildContext context) {
     int _selectedIndex = 0;
@@ -40,7 +44,19 @@ class home extends StatelessWidget {
               child: Container(
                 child: ListView(
                   children:  [
-                    const SizedBox(height: 125),
+                    DrawerHeader(child: Container(
+                      height: 80,
+                      color: Color(0xffD1BE9C),
+                      child: Center(
+                        child: Text( 'Signed In as '+ user.email!,
+                        style: TextStyle(
+                          color: Color(0xff7D4F50),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20
+                        ),),
+                      ),
+                    )),
+                    const SizedBox(height: 25),
                     ListTile(
                       leading:const Icon(Icons.person),
                       title:const Text('Profile'),
@@ -85,8 +101,7 @@ class home extends StatelessWidget {
                       leading: Icon(Icons.exit_to_app),
                       title: Text('Sign Out'),
                       onTap:
-                      () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()))
-                      ,
+                      () {FirebaseAuth.instance.signOut();}
                     ),
                   ],
                 ),
