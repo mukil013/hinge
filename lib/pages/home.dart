@@ -61,7 +61,7 @@ class home extends StatelessWidget {
                       leading:const Icon(Icons.person),
                       title:const Text('Profile'),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfileUI()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => profile()));
                       },
                     ),
                     ListTile(
