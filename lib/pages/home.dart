@@ -1,5 +1,3 @@
-
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -7,17 +5,13 @@ import 'package:hinge1/draweroptions/feedback.dart';
 import 'package:hinge1/draweroptions/profile.dart';
 import 'package:hinge1/pages/Login%20page.dart';
 import 'package:hinge1/pages/product.dart';
+import 'package:hinge1/pages/search.dart';
 import '../draweroptions/fav.dart';
 import '../draweroptions/order.dart';
 import '../draweroptions/review.dart';
 
 class home extends StatelessWidget {
   const home({super.key});
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     int _selectedIndex = 0;
@@ -32,7 +26,7 @@ class home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Hinge'),
-              IconButton(onPressed: null, icon: Icon(Icons.search,color: Colors.white))
+              IconButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => search())), icon: Icon(Icons.search,color: Colors.white))
             ],
           ),
           bottom: TabBar(tabs: [
@@ -102,9 +96,6 @@ class home extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
               backgroundColor: Color(0xff7D4F50),
               items: const <BottomNavigationBarItem>[
-
-                currentIndex: _selectedIndex,
-                onTap: _onItemTapped,
 
                 BottomNavigationBarItem(icon: Icon(Icons.home , color: Colors.white),label: 'home'),
                 BottomNavigationBarItem(icon: Icon(Icons.message, color: Colors.white),label: 'message'),
