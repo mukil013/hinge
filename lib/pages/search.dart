@@ -17,23 +17,11 @@ class search extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
-          child: Padding(
+          child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
-              child: ListView(
-                children: [
-                  TextField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        hintText: 'Search'
-                    ),
-                  ),
-                  SizedBox(height: 15),
-
-                ],
-              ),
-          ),
-        ),
+              child: TextField(
+              )),
+      )
       )
     );
   }
